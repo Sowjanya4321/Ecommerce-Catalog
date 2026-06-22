@@ -4,28 +4,28 @@ const products = [
 id:1,
 name:"iPhone 15",
 price:79999,
-image:"https://picsum.photos/300?1"
+image:"https://picsum.photos/300/200?1"
 },
 
 {
 id:2,
 name:"Samsung S25",
 price:69999,
-image:"https://picsum.photos/300?2"
+image:"https://picsum.photos/300/200?2"
 },
 
 {
 id:3,
 name:"MacBook Air",
 price:99999,
-image:"https://picsum.photos/300?3"
+image:"https://picsum.photos/300/200?3"
 },
 
 {
 id:4,
 name:"Smart Watch",
 price:9999,
-image:"https://picsum.photos/300?4"
+image:"https://picsum.photos/300/200?4"
 }
 
 ];
@@ -47,7 +47,7 @@ const keyword =
 this.value.toLowerCase();
 
 const filtered =
-products.filter(product =>
+products.filter(product=>
 
 product.name
 .toLowerCase()
@@ -64,8 +64,9 @@ productContainer.innerHTML="";
 
 items.forEach(product=>{
 
-productContainer.innerHTML+=`
+productContainer.innerHTML +=
 
+`
 <div class="product-card">
 
 <img src="${product.image}">
@@ -76,9 +77,7 @@ productContainer.innerHTML+=`
 
 <button
 onclick="addToCart(${product.id})">
-
 Add To Cart
-
 </button>
 
 </div>
@@ -105,7 +104,7 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-alert("Product Added");
+alert("Added to Cart");
 }
 
 const cartContainer =
@@ -113,15 +112,16 @@ document.getElementById("cartItems");
 
 if(cartContainer){
 
-let cart =
+const cart =
 JSON.parse(
 localStorage.getItem("cart")
 ) || [];
 
 cart.forEach(item=>{
 
-cartContainer.innerHTML+=`
+cartContainer.innerHTML +=
 
+`
 <div class="product-card">
 
 <h3>${item.name}</h3>
@@ -129,7 +129,6 @@ cartContainer.innerHTML+=`
 <p>₹${item.price}</p>
 
 </div>
-
 `;
 });
 }
