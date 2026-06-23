@@ -6,55 +6,53 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:#f1f5f9;
+background:#f8fafc;
 }
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 padding:20px 50px;
-
 background:white;
-
 box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
 
 .logo{
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 color:#2563eb;
 }
 
 ul{
 display:flex;
-gap:20px;
 list-style:none;
+gap:20px;
 }
 
 a{
 text-decoration:none;
 color:#333;
-font-weight:500;
 }
 
 .hero{
-height:85vh;
-
-display:flex;
-flex-direction:column;
-
-justify-content:center;
-align-items:center;
+height:90vh;
 
 background:
 linear-gradient(
-135deg,
-#2563eb,
-#38bdf8
-);
+rgba(0,0,0,.5),
+rgba(0,0,0,.5)
+),
+url("https://images.unsplash.com/photo-1441986300917-64674bd600d8");
 
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
 color:white;
 }
 
@@ -64,7 +62,7 @@ margin-bottom:20px;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 margin-bottom:20px;
 }
 
@@ -76,40 +74,27 @@ border-radius:10px;
 font-weight:bold;
 }
 
+.featured,
 .container{
-padding:40px;
+padding:50px;
 }
 
-#search{
-width:100%;
-padding:12px;
-margin:20px 0;
-border:1px solid #ccc;
-border-radius:8px;
-}
-
-.products{
+.product-grid{
 display:grid;
-
 grid-template-columns:
 repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
+gap:25px;
+margin-top:25px;
 }
 
 .product-card{
 background:white;
-
-padding:20px;
-
 border-radius:15px;
-
-text-align:center;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.1);
-
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
 transition:.3s;
+text-align:center;
+padding-bottom:20px;
 }
 
 .product-card:hover{
@@ -120,7 +105,6 @@ transform:translateY(-10px);
 width:100%;
 height:220px;
 object-fit:cover;
-border-radius:10px;
 }
 
 .product-card h3{
@@ -133,9 +117,29 @@ margin-bottom:15px;
 
 button{
 padding:10px 15px;
-border:none;
 background:#2563eb;
 color:white;
+border:none;
 border-radius:8px;
 cursor:pointer;
+}
+
+#search{
+width:100%;
+padding:12px;
+margin:20px 0;
+}
+
+.filters{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
 }
