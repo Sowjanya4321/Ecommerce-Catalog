@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products</title>
-
+<title>ShopHub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,27 +14,47 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="cart.html">Cart</a></li>
+        <li><a href="cart.html">Cart <span id="cartCount">0</span></a></li>
     </ul>
 </nav>
 
-<div class="container">
+<section class="hero">
+    <div class="hero-content">
+        <h1>Summer Mega Sale</h1>
+        <p>Up to 70% OFF on Electronics</p>
+        <a href="products.html" class="btn">Shop Now</a>
+    </div>
+</section>
 
-<h2>Products</h2>
+<section class="featured">
+    <h2>Featured Products</h2>
 
-<input
-type="text"
-id="search"
-placeholder="Search Products">
+    <div class="product-grid">
 
-<div
-id="products"
-class="products">
-</div>
+        <div class="product-card">
+            <img src="https://picsum.photos/300/200?1">
+            <h3>iPhone 15 Pro</h3>
+            <p>₹79,999</p>
+        </div>
 
-</div>
+        <div class="product-card">
+            <img src="https://picsum.photos/300/200?2">
+            <h3>MacBook Air</h3>
+            <p>₹99,999</p>
+        </div>
 
-<script src="app.js"></script>
+        <div class="product-card">
+            <img src="https://picsum.photos/300/200?3">
+            <h3>Galaxy S25</h3>
+            <p>₹69,999</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 ShopHub. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
