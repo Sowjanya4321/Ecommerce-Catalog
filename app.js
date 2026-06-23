@@ -2,15 +2,17 @@ const products = [
 
 {
 id:1,
-name:"iPhone 15",
+name:"iPhone 15 Pro",
 price:79999,
+category:"Mobiles",
 image:"https://picsum.photos/300/200?1"
 },
 
 {
 id:2,
-name:"Samsung S25",
+name:"Samsung Galaxy S25",
 price:69999,
+category:"Mobiles",
 image:"https://picsum.photos/300/200?2"
 },
 
@@ -18,6 +20,7 @@ image:"https://picsum.photos/300/200?2"
 id:3,
 name:"MacBook Air",
 price:99999,
+category:"Laptops",
 image:"https://picsum.photos/300/200?3"
 },
 
@@ -25,6 +28,7 @@ image:"https://picsum.photos/300/200?3"
 id:4,
 name:"Smart Watch",
 price:9999,
+category:"Accessories",
 image:"https://picsum.photos/300/200?4"
 }
 
@@ -39,22 +43,19 @@ displayProducts(products);
 
 document
 .getElementById("search")
-.addEventListener(
-"input",
-function(){
+.addEventListener("input",function(){
 
 const keyword =
 this.value.toLowerCase();
 
 const filtered =
-products.filter(product=>
-
+products.filter(product =>
 product.name
 .toLowerCase()
-.includes(keyword)
-);
+.includes(keyword));
 
 displayProducts(filtered);
+
 });
 }
 
@@ -77,11 +78,14 @@ productContainer.innerHTML +=
 
 <button
 onclick="addToCart(${product.id})">
+
 Add To Cart
+
 </button>
 
 </div>
 `;
+
 });
 }
 
@@ -104,7 +108,8 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-alert("Added to Cart");
+alert("Product Added To Cart");
+
 }
 
 const cartContainer =
@@ -115,7 +120,7 @@ if(cartContainer){
 const cart =
 JSON.parse(
 localStorage.getItem("cart")
-) || [];
+)||[];
 
 cart.forEach(item=>{
 
@@ -123,12 +128,11 @@ cartContainer.innerHTML +=
 
 `
 <div class="product-card">
-
 <h3>${item.name}</h3>
-
 <p>₹${item.price}</p>
-
 </div>
 `;
+
 });
+
 }
